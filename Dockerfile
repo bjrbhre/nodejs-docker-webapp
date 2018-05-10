@@ -1,12 +1,14 @@
 # parent image
-FROM node:carbon
+FROM node:latest
 
 # app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
+# install latest npm version
+RUN npm install npm -g
 # install dependencies
 RUN npm install
 # If you are building your code for production
