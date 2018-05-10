@@ -1,5 +1,5 @@
 # parent image
-FROM node:latest
+FROM node:alpine
 
 # app directory
 WORKDIR /app
