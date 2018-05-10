@@ -4,6 +4,10 @@ FROM node:alpine
 # app directory
 WORKDIR /app
 
+RUN mkdir /shared
+RUN echo "hello world" > /shared/greeting
+VOLUME /shared
+
 # wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
