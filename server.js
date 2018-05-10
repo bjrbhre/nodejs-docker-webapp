@@ -5,11 +5,12 @@ const express = require('express');
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
+const CUSTOM_MESSAGE = process.env.CUSTOM_MESSAGE || 'Hello world'
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send(`${CUSTOM_MESSAGE}\n`);
 });
 
 app.listen(PORT, HOST);
